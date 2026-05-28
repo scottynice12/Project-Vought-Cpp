@@ -1,0 +1,17 @@
+name: C++ CI Verification
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Compile Test Binary
+      run: g++ -std=c++17 tests.cpp -o QA_Engine
+
+    - name: Execute Automated QA Tests
+      run: ./QA_Engine
