@@ -17,6 +17,11 @@ int main() {
     assert(VoughtValidator::validateSubject("SuperLongNameHere", 2, 3, 2) == false);
     std::cout << "✅ Test 3 Passed: Invalid name lengths blocked.\n";
 
+     // Test 4: Below Minimum Boundary Check (Should Fail)
+    assert(VoughtValidator::validateSubject("A-Train", 0, 4, 3) == false);
+    std::cout << "✅ Test 4 Passed: Invalid low boundary stats blocked.\n";
+
+
     std::cout << "\n🎉 ALL QA CHECKS PASSED SUCCESSFULLY!\n";
     return 0;
 }
